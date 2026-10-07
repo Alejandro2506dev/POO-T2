@@ -1,0 +1,33 @@
+﻿@model POO_T2.Models.Alumno
+
+@{
+    ViewBag.Title = "Detalles del Alumno";
+}
+
+<h2>Detalles del Alumno</h2>
+
+<table class="table table-bordered" style="max-width:500px">
+    <tr>
+        <th>DNI</th>
+        <td>@Model.Dni</td>
+    </tr>
+    <tr>
+        <th>Nombres</th>
+        <td>@Model.Nombres</td>
+    </tr>
+    <tr>
+        <th>Apellidos</th>
+        <td>@Model.Apellidos</td>
+    </tr>
+    <tr>
+        <th>Carrera</th>
+        <td>@Model.Carrera</td>
+    </tr>
+    <tr>
+        <th>Ciclo</th>
+        <td>@Model.Ciclo</td>
+    </tr>
+</table>
+
+@Html.ActionLink("Actualizar", "Actualizar", new { dni = Model.Dni })
+@Html.ActionLink("Volver", "Index")

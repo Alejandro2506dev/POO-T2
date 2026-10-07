@@ -1,0 +1,38 @@
+﻿@model List<POO_T2.Models.Alumno>
+@{
+    ViewBag.Title = "Lista de alumnos";
+}
+
+<h2>Lista de Alumnos</h2>
+
+<p>@Html.ActionLink("Agregar alumno", "Agregar")</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>DNI</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Carrera</th>
+            <th>Ciclo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.Dni</td>
+                <td>@a.Nombres</td>
+                <td>@a.Apellidos</td>
+                <td>@a.Carrera</td>
+                <td>@a.Ciclo</td>
+                <td>
+                    @Html.ActionLink("Detalles", "Detalles", new { dni = a.Dni })
+                    @Html.ActionLink("Actualizar", "Actualizar", new { dni = a.Dni })
+                    @Html.ActionLink("Eliminar", "Eliminar", new { dni = a.Dni })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
